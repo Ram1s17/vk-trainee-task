@@ -2,6 +2,7 @@ import { FC, useMemo } from "react"
 import { Tabs } from "antd"
 
 import RandomFactForm from "./components/RandomFactForm/RandomFactForm"
+import AgeByName from "./components/AgeByNameForm/AgeByNameForm"
 
 const App: FC = () => {
   const TabItems = useMemo(() => {
@@ -10,6 +11,11 @@ const App: FC = () => {
         key: 'random-fact',
         label: 'Get a random fact',
         children: <RandomFactForm />
+      },
+      {
+        key: 'age-by-name',
+        label: 'Get age by name',
+        children: <AgeByName />
       }
     ]
   }, [])

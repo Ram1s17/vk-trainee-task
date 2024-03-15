@@ -39,6 +39,7 @@ const RandomFactForm: FC = () => {
             <Input.TextArea
                 readOnly
                 value={isLoading ? 'Loading...' : isError ? error.message : data?.fact || ''}
+                rows={4}
             />
         </Flex>
     )
