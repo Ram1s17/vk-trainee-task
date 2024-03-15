@@ -1,30 +1,31 @@
-# React + TypeScript + Vite
+## Профильное задание - Frontend-разработчик
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Как запустить проект
 
-Currently, two official plugins are available:
+1. Склонировать репозиторий
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```bash
+git clone https://github.com/Ram1s17/vk-trainee-task.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. Установка зависимостей
+
+```bash
+npm install
+```
+
+3. Для запуска в режиме разработки выполнить
+
+```bash
+npm run dev
+```
+
+## Описание
+
+Разработано React-приложение, состоящее из двух частей:
+
+1. Блок с кнопкой и текстовым полем. По нажатию на кнопку выполняется запрос к https://catfact.ninja/fact. Полученный факт записывается в текстовое поле.
+
+2. Форма с текстовым полем и кнопкой отправки. Пользователь вводит своё имя в текстовом поле. По истечении 3-х секунд после ввода имени или при отправке формы выполняется запрос к https://api.agify.io/ с введенным именем в параметре name. Ответом является возраст человека, определенный по имени. Этот ответ отображается под текстовым полем. Реализованы предотвращение дублирующих запросов (повторные запросы с тем же именем не отправляются) и отправка следующего запроса до того, как текущий был обработан.
+
+Приложение разработано на React + TypeSсript с использованием Ant Design (UI) и TanStack Query (работа с запросами).
